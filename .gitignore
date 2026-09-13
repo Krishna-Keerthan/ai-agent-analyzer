@@ -1,0 +1,87 @@
+# ==============================================================================
+# 🐳 Docker & Databases (PostgreSQL / PgBouncer)
+# ==============================================================================
+# Ignore local database storage folders to prevent committing raw data
+.database_data/
+postgres_data/
+pgbouncer_data/
+
+# Ignore local Docker override files if they contain secrets
+docker-compose.override.yml
+
+# ==============================================================================
+# 🐍 FastAPI / Python Backend
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================================================================
+# ⚡ Next.js / Node.js Frontend
+# ==============================================================================
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Testing
+coverage/
+.next_jest_cache/
+
+# ==============================================================================
+# 🔑 Environment Variables & Secrets (Universal)
+# ==============================================================================
+# Block all local secret files, but keep example/template files
+*.env
+*.env.local
+*.env.production
+*.env.development
+*.env.*.local
+
+# Allow committing template files for team onboarding
+!*.env.example
+!*.env.template
+
+# ==============================================================================
+# 💻 Operating System & IDEs
+# ==============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Ehthumbs.db
+Desktop.ini
+
+# IDEs (VS Code, WebStorm, PyCharm)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
