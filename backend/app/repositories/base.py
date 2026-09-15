@@ -1,0 +1,1 @@
+"""Abstract Repository Interface (Protocol)"""

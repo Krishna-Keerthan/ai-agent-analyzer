@@ -23,7 +23,8 @@ services:
     environment:
       DB_USER: app_admin
       DB_PASSWORD: admin_password
-      DB_HOST: postgres
+      DB_HOST: agent_analytics_db
+      DB_PORT: 5432
       DB_NAME: agent_analytics
       AUTH_TYPE: scram-sha-256
       POOL_MODE: transaction

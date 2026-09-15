@@ -1,3 +1,5 @@
+"""asyncpg connection pool factory & manager"""
+
 import os
 from typing import AsyncGenerator
 import asyncpg
@@ -29,7 +31,7 @@ async def close_db_pool() -> None:
 
 async def get_db_connection() -> AsyncGenerator[asyncpg.Connection, None]:
     if pool is None:
-        raise RuntimeError("Databse connection pool is not initialized.")
+        raise RuntimeError("Database connection pool is not initialized.")
 
     async with pool.acquire(timeout=10.0) as connection:
         yield connection

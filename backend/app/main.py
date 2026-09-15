@@ -5,8 +5,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, HTTPException, status, Query
 import asyncpg
 
-from app.db import init_db_pool, close_db_pool, get_db_connection
-from app.schemas import BatchTraceIngestRequest
+from app.core.database import init_db_pool, close_db_pool, get_db_connection
+from app.schemas.traces import BatchTraceIngestRequest
+from app.api.v1.endpoints.traces import router as traces_router
 
 
 @asynccontextmanager
@@ -21,6 +22,8 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
+app.include_router(traces_router, prefix="/api/v1")
 
 
 @app.get("/health")
